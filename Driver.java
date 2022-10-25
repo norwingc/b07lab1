@@ -28,14 +28,18 @@ public class Driver {
     FileWriter myWriter = new FileWriter("result.txt");
     myWriter.write("Result: ");
     for (int i = 0; i < s.coef.length; i++) {
-        myWriter.write(s.coef[i]+"x"+s.exponents[i]);
+        if(s.coef[i]<0){
+          myWriter.write(s.coef[i]+"x"+s.exponents[i]);
+        }
+        else if(s.coef[i]>0){
+          myWriter.write("+"+s.coef[i]+"x"+s.exponents[i]);
+        }
     } 
     myWriter.close();
   } catch (IOException e) {
     System.out.println("An error occurred.");
     e.printStackTrace();
   }
-
 
  } 
 } 

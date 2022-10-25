@@ -13,7 +13,7 @@ public class Polynomial {
 		this.exponents = new int[polSyze];
 	   for (int i = 0; i< coef.length; i++) {
 		   this.coef[i] = 0;
-		   this.exponents[i] = 0;
+		   this.exponents[i] = i;
 	   }
 	   
    }
@@ -151,7 +151,16 @@ public class Polynomial {
 				result.coef[j] = this.coef[i]*second.coef[j];
 				result.exponents[j] = this.exponents[i]+second.exponents[j];
 			}
+			for (int j = 0; j < result.coef.length; j++) {
+				System.out.println(result.coef[j]+"x"+result.exponents[j]);
+			}
+			
 			resultMul = resultMul.add(result);	
+			System.out.println("result mul: ");
+			for (int j = 0; j < resultMul.coef.length; j++) {
+				System.out.println(resultMul.coef[j]+"x"+resultMul.exponents[j]);
+			}
+			System.out.println("end: result mul: ");
 		}
 		return resultMul;
 	}
